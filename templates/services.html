@@ -1,0 +1,134 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Services Section -->
+<section class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">Our Services</h2>
+        
+        <!-- Career Guidance Section -->
+        <div class="row mb-5">
+            <div class="col-lg-6">
+                <h3>Career Guidance Services</h3>
+                <p>We provide comprehensive career counseling to help students make informed decisions about their future.</p>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Career Exploration</li>
+                    <li class="list-group-item">Goal Setting</li>
+                    <li class="list-group-item">Self-Assessment</li>
+                    <li class="list-group-item">Skill Assessment and Development</li>
+                    <li class="list-group-item">Decision Making</li>
+                </ul>
+            </div>
+            <div class="col-lg-6">
+                <img src="{{ url_for('static', filename='images/new.png') }}" alt="Career Guidance" class="img-fluid rounded">
+            </div>
+        </div>
+        
+        <!-- Set Career Section -->
+        <div class="row mb-5 bg-light p-4 rounded">
+            <div class="col-12">
+                <h3 class="text-center mb-4">SET CAREER - Guidance Lab in Your School/Institute</h3>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">1. Explore Opportunities</h5>
+                                <p class="card-text">Give your students the chance to excel. Let them explore different streams, degrees, courses, and scholarship exams (National or International Level).</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">2. Discover Career Options</h5>
+                                <p class="card-text">Let them discover career options in all sectors (e.g., Govt, Corporate, MNC companies).</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">3. College Admission Guidance</h5>
+                                <p class="card-text">Choose the best option for admission in colleges/universities (Local/National).</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">4. International Education</h5>
+                                <p class="card-text">Let them know how to go ABROAD for International Education.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">5. Potential Assessment</h5>
+                                <p class="card-text">Find your students' potential like IQ, EQ, SQ, AQ by DMIT or Psychometric Test.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Career Counseling Benefits -->
+        <div class="row">
+            <div class="col-12">
+                <h3 class="text-center mb-4">Career Counseling Benefits</h3>
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-balance-scale fa-3x mb-3 text-primary"></i>
+                                <h5>Work-Life Balance</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-briefcase fa-3x mb-3 text-primary"></i>
+                                <h5>Job/Business Search Techniques</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-chart-line fa-3x mb-3 text-primary"></i>
+                                <h5>Skill Assessment and Development</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-check-circle fa-3x mb-3 text-primary"></i>
+                                <h5>Decision Making</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-compass fa-3x mb-3 text-primary"></i>
+                                <h5>Career Exploration</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-bullseye fa-3x mb-3 text-primary"></i>
+                                <h5>Goal Setting</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

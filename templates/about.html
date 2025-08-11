@@ -1,0 +1,160 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Add this right before </body> in about.html -->
+<div class="ai-chatbot-float">
+  <div class="ai-chatbot-container" id="aiChatbot" style="display:none;">
+    <div class="card border-primary">
+      <div class="card-header bg-primary text-white d-flex justify-content-between">
+        <span><i class="fas fa-robot me-2"></i> Career Guide</span>
+        <button class="btn btn-sm btn-light" id="closeChatbot">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="card-body chatbot-body" style="height:300px; overflow-y:auto">
+        <div class="chat-messages" id="chatMessages">
+          <div class="ai-message alert alert-info p-2 mb-2">
+            <strong>AI Guide:</strong> Hello! Ask me about VidhyaPrem's career counseling services.
+          </div>
+        </div>
+        <div class="input-group mt-3">
+          <input type="text" class="form-control" id="chatInput" placeholder="Type your question...">
+          <button class="btn btn-primary" id="sendChat">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-primary btn-circle" id="toggleChatbot">
+    <i class="fas fa-comment-dots fa-lg"></i>
+  </button>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Elements
+  const chatbot = document.getElementById('aiChatbot');
+  const toggleBtn = document.getElementById('toggleChatbot');
+  const closeBtn = document.getElementById('closeChatbot');
+  const chatInput = document.getElementById('chatInput');
+  const sendBtn = document.getElementById('sendChat');
+  const chatMessages = document.getElementById('chatMessages');
+
+  // Toggle chatbot visibility
+  toggleBtn.addEventListener('click', function() {
+    chatbot.style.display = chatbot.style.display === 'none' ? 'block' : 'none';
+  });
+
+  // Close chatbot
+  closeBtn.addEventListener('click', function() {
+    chatbot.style.display = 'none';
+  });
+
+  // Send message function
+  function sendMessage() {
+    const message = chatInput.value.trim();
+    if (!message) return;
+
+    // Add user message
+    chatMessages.innerHTML += `
+      <div class="user-message alert p-2 mb-2">
+        <strong>You:</strong> ${message}
+      </div>
+    `;
+    chatInput.value = '';
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+
+    // Add loading indicator
+    const loadingId = 'loading-' + Date.now();
+    chatMessages.innerHTML += `
+      <div id="${loadingId}" class="ai-message alert p-2 mb-2">
+        <strong>AI Guide:</strong> <span class="typing">Thinking...</span>
+      </div>
+    `;
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+
+    // Simulate response (replace with actual API call)
+    setTimeout(() => {
+      document.getElementById(loadingId).remove();
+      
+      // Sample responses - replace with real API
+      const sampleResponses = [
+        "VidhyaPrem specializes in career counseling using the GROW methodology.",
+        "Our team has helped 500+ students find their ideal career paths.",
+        "We offer both in-person and online counseling sessions."
+      ];
+      const randomResponse = sampleResponses[Math.floor(Math.random() * sampleResponses.length)];
+      
+      chatMessages.innerHTML += `
+        <div class="ai-message alert p-2 mb-2">
+          <strong>AI Guide:</strong> ${randomResponse}
+        </div>
+      `;
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }, 1500);
+  }
+
+  // Send on button click or Enter key
+  sendBtn.addEventListener('click', sendMessage);
+  chatInput.addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') sendMessage();
+  });
+});
+</script>
+    
+<!-- About Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <h2 class="mb-4">About VidhyaPrem</h2>
+                <p class="lead">Education is the Greatest Treasure</p>
+                <p>We are dedicated to unlocking the potential of every student through comprehensive educational services and career guidance.</p>
+                
+                <div class="card bg-light border-0 mb-4">
+                    <div class="card-body">
+                        <blockquote class="blockquote mb-0">
+                            <p>"Career counseling helps students choose the right career paths. Eco-friendly pencils reduce environmental impact. Student insurance ensures access to healthcare, protecting their well-being and supporting academic success."</p>
+                        </blockquote>
+                    </div>
+                </div>
+                
+                <h4 class="mt-4">Our Mission</h4>
+                <div class="card bg-primary text-white">
+                    <div class="card-body">
+                        <blockquote class="blockquote mb-0">
+                            <p>"Our mission is to empower our students to pursue their passion for learning, lead lives of integrity and create socially responsible solutions."</p>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <img src="{{ url_for('static', filename='images/about-us.png') }}" alt="About Us" class="img-fluid rounded">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Why Choose Us -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-5">Why Choose VidhyaPrem?</h2>
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h4 class="card-title">Personalized Learning Plans</h4>
+                        <p class="card-text">Choose our educational firm for unparalleled expertise, personalized learning plans tailored to each student's needs, and a commitment to their success.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h4 class="card-title">Comprehensive Support</h4>
+                        <p class="card-text">We provide holistic support including career counseling, educational resources, and student insurance to ensure all-around development.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

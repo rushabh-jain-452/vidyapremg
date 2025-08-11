@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Team Section -->
+<section class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">Our Team</h2>
+        
+        <div class="row">
+            <!-- Raul Patill -->
+            <div class="col-lg-6 mb-4">
+                <div class="card h-100">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="{{ url_for('static', filename='images/rahul.jpeg') }}" class="img-fluid rounded-start h-100" alt="Mr. Raul Patill">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h4 class="card-title">Mr. Raul Patill</h4>
+                                <h6 class="card-subtitle mb-2 text-muted">Career Counselor, School Developer</h6>
+                                <p class="card-text"><strong>Education:</strong> B.Com/ M.Com</p>
+                                <p class="card-text"><strong>Founder:</strong> VidhyaPrem - Group of Education</p>
+                                <p class="card-text"><strong>Experience:</strong> Ex-BSF (Home Ministry-Govt. Of India) - 5 Years Worked in Higher secondary Commerce Stream.</p>
+                                <p class="card-text"><i class="fas fa-phone"></i> +91 73 5991 5556</p>
+                                <p class="card-text"><i class="fas fa-envelope"></i> vidhyaprem017@gmail.com</p>
+                                <p class="card-text fst-italic">मेहनत सही जगह करो, हर जगह नह ।</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Jigar B. Patel -->
+            <div class="col-lg-6 mb-4">
+                <div class="card h-100">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="{{ url_for('static', filename='images/jigar-patel.jpg') }}" class="img-fluid rounded-start h-100" alt="Mr. Jigar B. Patel">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h4 class="card-title">Mr. Jigar B. Patel</h4>
+                                <h6 class="card-subtitle mb-2 text-muted">Science Advisor</h6>
+                                <p class="card-text"><strong>Education:</strong> B.E Civil (Exp: 14 years)</p>
+                                <p class="card-text">Management of Science Department in Vedant International School Surat.</p>
+                                <p class="card-text">As Advisor- science stream in Vidhyaprem (Group of Education)</p>
+                                <p class="card-text"><i class="fas fa-phone"></i> +91 99781 54015</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Yash Makwafie -->
+            <div class="col-lg-6 mb-4">
+                <div class="card h-100">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="{{ url_for('static', filename='images/yash.png') }}" class="img-fluid rounded-start h-100" alt="Mr. Yash Makwafie">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h4 class="card-title">Mr. Yash Makwafie</h4>
+                                <h6 class="card-subtitle mb-2 text-muted">Computer/IT/AI Advisor</h6>
+                                <p class="card-text"><strong>Education:</strong> MSC(CA)</p>
+                                <p class="card-text">Work in V.T. Poddar BCA College as a Professor in Surat.</p>
+                                <p class="card-text">As Advisor- Computer/IT/AI or Technical Stream in Vidhyaprem (Group of Education)</p>
+                                <p class="card-text"><i class="fas fa-phone"></i> +91 79 8456 5381</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pradeep R. Shirsath -->
+            <div class="col-lg-6 mb-4">
+                <div class="card h-100">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="{{ url_for('static', filename='images/pradip.png') }}" class="img-fluid rounded-start h-100" alt="Mr. Pradeep R. Shirsath">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h4 class="card-title">Mr. Pradeep R. Shirsath</h4>
+                                <h6 class="card-subtitle mb-2 text-muted">Academic Counselor</h6>
+                                <p class="card-text"><strong>Education:</strong> Honorary - Ph.D B.Com, LLB, MSW, MSO, PGDR, PGDDM</p>
+                                <p class="card-text"><strong>Achievements:</strong> State Youth Awarded - Government of Gujarat</p>
+                                <p class="card-text"><strong>Designation:</strong></p>
+                                <ul>
+                                    <li>Academic Counselor MSW Department - Indira Gandhi National Open University (New Delhi)</li>
+                                    <li>Counselor NCS, Ministry of Labour & Employment Govt. of India</li>
+                                    <li>Ex. Mobilization Cum Placement Officer & Ex.Career Counselor Employment Office, Surat</li>
+                                </ul>
+                                <p class="card-text"><i class="fas fa-phone"></i> +91 98988 38625</p>
+                                <p class="card-text"><i class="fas fa-envelope"></i> ps121245@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

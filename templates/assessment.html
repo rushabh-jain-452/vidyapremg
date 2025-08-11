@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="text-center mb-4">Career Assessment</h2>
+                <p class="text-center mb-5">Answer these questions to receive personalized career recommendations from our AI system.</p>
+                
+                {% if error %}
+                <div class="alert alert-danger">{{ error }}</div>
+                {% endif %}
+                
+                <form method="POST" action="{{ url_for('career_assessment') }}">
+                    {% for question in questions %}
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Question {{ loop.index }}</h5>
+                            <p class="card-text">{{ question.question }}</p>
+                            
+                            <div class="form-group">
+                                {% for option in question.options %}
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" 
+                                           name="{{ question.id }}" 
+                                           id="{{ question.id }}-{{ loop.index }}" 
+                                           value="{{ option }}" required>
+                                    <label class="form-check-label" for="{{ question.id }}-{{ loop.index }}">
+                                        {{ option }}
+                                    </label>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    
+                    <div class="text-center mt-4">
+                        <button type="submit" class="btn btn-primary btn-lg">Get My Career Analysis</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

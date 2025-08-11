@@ -1,0 +1,180 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Achievements Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="display-4">Our Achievements</h2>
+            <p class="lead">Recognizing excellence in career guidance and student development</p>
+        </div>
+
+        <!-- Certificate Display -->
+        <div class="row g-4">
+            <!-- Main Certificate -->
+            <div class="col-lg-6">
+                <div class="card shadow-lg h-100">
+                    <div class="card-header bg-primary text-white">
+                        <h4 class="mb-0">Drug-Free Pledge Certification</h4>
+                    </div>
+                    <div class="card-body text-center">
+                        <div class="certificate-frame mb-4 p-3 bg-light">
+                            <img src="{{ url_for('static', filename='images/no_drug.jpg') }}" 
+                                 alt="Say No to Drugs Certificate" 
+                                 class="img-fluid border">
+                            <div class="certificate-caption mt-3">
+                                <p class="mb-1"><strong>Awarded to:</strong> Raul Patil</p>
+                                <p class="mb-1"><strong>Date:</strong> 21st September 2024</p>
+                            </div>
+                        </div>
+                        <p class="card-text">
+                            This certificate recognizes commitment to a drug-free lifestyle and promoting 
+                            healthy choices among students.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Achievement Highlights -->
+            <div class="col-lg-6">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-header bg-success text-white">
+                        <h4 class="mb-0">Key Milestones</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="achievement-timeline">
+                            <!-- Timeline Item 1 -->
+                            <div class="timeline-item mb-4">
+                                <div class="timeline-badge bg-info">
+                                    <i class="fas fa-award"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h5>State Youth Award</h5>
+                                    <p class="text-muted mb-1">Government of Gujarat</p>
+                                    <p>Awarded to Mr. Pradeep Shirsath for outstanding contributions to career counseling</p>
+                                </div>
+                            </div>
+
+                            <!-- Timeline Item 2 -->
+                            <div class="timeline-item mb-4">
+                                <div class="timeline-badge bg-warning">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h5>500+ Students Guided</h5>
+                                    <p class="text-muted mb-1">Since 2020</p>
+                                    <p>Successfully counseled students across science, commerce, and arts streams</p>
+                                </div>
+                            </div>
+
+                            <!-- Timeline Item 3 -->
+                            <div class="timeline-item">
+                                <div class="timeline-badge bg-danger">
+                                    <i class="fas fa-school"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h5>25+ School Partnerships</h5>
+                                    <p class="text-muted mb-1">Across Gujarat</p>
+                                    <p>Conducted career guidance workshops in educational institutions</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Testimonials Section -->
+        <div class="row mt-5">
+            <div class="col-12">
+                <div class="card border-0 shadow">
+                    <div class="card-header bg-info text-white">
+                        <h4 class="mb-0">Success Stories</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <!-- Testimonial 1 -->
+                            <div class="col-md-4 mb-4 mb-md-0">
+                                <div class="testimonial-card p-4 h-100">
+                                    <div class="d-flex mb-3">
+                                        <img src="{{ url_for('static', filename='images/student-1.jpg') }}" 
+                                             class="rounded-circle me-3" 
+                                             width="60" 
+                                             alt="Student">
+                                        <div>
+                                            <h5 class="mb-1">Priya Patel</h5>
+                                            <p class="text-muted mb-0">Medical Student</p>
+                                        </div>
+                                    </div>
+                                    <div class="testimonial-text">
+                                        <p>"VidhyaPrem's guidance helped me secure admission in a top medical college. Their career assessment was incredibly accurate!"</p>
+                                    </div>
+                                    <div class="rating text-warning">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Testimonial 2 -->
+                            <div class="col-md-4 mb-4 mb-md-0">
+                                <div class="testimonial-card p-4 h-100">
+                                    <div class="d-flex mb-3">
+                                        <img src="{{ url_for('static', filename='images/student-2.jpg') }}" 
+                                             class="rounded-circle me-3" 
+                                             width="60" 
+                                             alt="Student">
+                                        <div>
+                                            <h5 class="mb-1">Rahul Sharma</h5>
+                                            <p class="text-muted mb-0">Engineering Student</p>
+                                        </div>
+                                    </div>
+                                    <div class="testimonial-text">
+                                        <p>"The AI counseling tool suggested engineering specializations I hadn't considered. Now I'm pursuing my dream career!"</p>
+                                    </div>
+                                    <div class="rating text-warning">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Testimonial 3 -->
+                            <div class="col-md-4">
+                                <div class="testimonial-card p-4 h-100">
+                                    <div class="d-flex mb-3">
+                                        <img src="{{ url_for('static', filename='images/student-3.jpg') }}" 
+                                             class="rounded-circle me-3" 
+                                             width="60" 
+                                             alt="Student">
+                                        <div>
+                                            <h5 class="mb-1">Neha Gupta</h5>
+                                            <p class="text-muted mb-0">Study Abroad Student</p>
+                                        </div>
+                                    </div>
+                                    <div class="testimonial-text">
+                                        <p>"Thanks to VidhyaPrem's international education guidance, I'm now studying at my dream university in Canada."</p>
+                                    </div>
+                                    <div class="rating text-warning">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,150 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section bg-primary text-white py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h1 class="display-4 fw-bold">EDUCATION IS THE GREATEST TREASURE</h1>
+                <p class="lead">Unlock your potential with us</p>
+                <a href="{{ url_for('contact') }}" class="btn btn-light btn-lg mt-3">Get Started</a>
+            </div>
+            <div class="col-lg-6">
+                <img src="{{ url_for('static', filename='images/image_1.png') }}" alt="Education" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Mission Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <blockquote class="blockquote">
+                    <p class="fs-3">"Our mission is to empower our students to pursue their passion for learning, lead lives of integrity and create socially responsible solutions."</p>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Why Choose Us -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-5">Why Choose Us?</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-graduation-cap fa-3x mb-3 text-primary"></i>
+                        <h4 class="card-title">Career Counseling</h4>
+                        <p class="card-text">Helps students choose the right career paths based on their skills and interests.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-leaf fa-3x mb-3 text-primary"></i>
+                        <h4 class="card-title">Eco-friendly Products</h4>
+                        <p class="card-text">We provide eco-friendly pencils to reduce environmental impact.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-shield-alt fa-3x mb-3 text-primary"></i>
+                        <h4 class="card-title">Student Insurance</h4>
+                        <p class="card-text">Ensures access to healthcare, protecting their well-being and supporting academic success.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Our Products -->
+<section class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">Our Products & Services</h2>
+        <div class="row">
+            <div class="col-md-3 col-6 mb-4 text-center">
+                <img src="{{ url_for('static', filename='images/career-ride.png') }}" alt="Carer Ride" class="img-fluid mb-3" style="max-width: 100px;">
+                <h5>Carer Ride</h5>
+            </div>
+            <div class="col-md-3 col-6 mb-4 text-center">
+                <img src="{{ url_for('static', filename='images/eco-write.png') }}" alt="Eco-wriite" class="img-fluid mb-3" style="max-width: 100px;">
+                <h5>Eco-wriite</h5>
+            </div>
+            <div class="col-md-3 col-6 mb-4 text-center">
+                <img src="{{ url_for('static', filename='images/insurance.png') }}" alt="Insurance" class="img-fluid mb-3" style="max-width: 100px;">
+                <h5>Insurance</h5>
+            </div>
+          <!--  <div class="col-md-3 col-6 mb-4 text-center">
+                <img src="{{ url_for('static', filename='images/career-guidance.png') }}" alt="Career Guidance" class="img-fluid mb-3" style="max-width: 100px;">
+                <h5>Career Guidance</h5>
+            </div>
+            <div class="col-md-3 col-6 mb-4 text-center">
+                <img src="{{ url_for('static', filename='images/pencil.png') }}" alt="Paper waste Pencil" class="img-fluid mb-3" style="max-width: 100px;">
+                <h5>Paper waste Pencil</h5>
+            </div>
+            <div class="col-md-3 col-6 mb-4 text-center">
+                <img src="{{ url_for('static', filename='images/student-insurance.png') }}" alt="Student Insurance" class="img-fluid mb-3" style="max-width: 100px;">
+                <h5>Student Insurance</h5>
+            </div> -->
+        </div>
+    </div>
+</section>
+
+<!-- GROW Model -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-5">Our Approach - GROW Model</h2>
+        <div class="row">
+            <div class="col-md-3 mb-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <h1 class="display-4 text-primary">G</h1>
+                        <h4>Goal</h4>
+                        <p>What do you wish to achieve?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <h1 class="display-4 text-primary">R</h1>
+                        <h4>Reality</h4>
+                        <p>What is the current reality?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <h1 class="display-4 text-primary">O</h1>
+                        <h4>Option</h4>
+                        <p>What are the options available?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <h1 class="display-4 text-primary">W</h1>
+                        <h4>Way Forward</h4>
+                        <p>What will you do to achieve the set goal?</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <h3 class="text-primary">"We Provide Solution"</h3>
+            <p class="lead">We provide top-notch career counseling for students, support schools with educational resources, and guide parents, all while fostering a nurturing environment and serving the nation with dedication.</p>
+        </div>
+    </div>
+</section>
+{% endblock %}

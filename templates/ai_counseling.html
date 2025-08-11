@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="text-center mb-4">AI Career Counselor</h2>
+                <p class="text-center mb-5">Get instant guidance on career options, educational paths, and skill development from our AI assistant.</p>
+                
+                <div class="card">
+                    <div class="card-body">
+                        <div id="chat-container" style="height: 400px; overflow-y: auto; margin-bottom: 20px; border: 1px solid #eee; padding: 15px; border-radius: 5px;">
+                            <div class="ai-message alert alert-info">
+                                <strong>AI Counselor:</strong> Hello! I'm here to help you with career guidance. What would you like to know about potential career paths, education options, or skill development?
+                            </div>
+                        </div>
+                        
+                        <form id="chat-form">
+                            <div class="input-group mb-3">
+                                <input type="text" id="user-input" class="form-control" placeholder="Ask me about careers..." required>
+                                <button class="btn btn-primary" type="submit">Send</button>
+                            </div>
+                        </form>
+                        
+                        <div class="suggested-questions mt-4">
+                            <p class="text-muted">Try asking:</p>
+                            <div class="d-flex flex-wrap gap-2">
+                                <button class="btn btn-outline-secondary suggested-btn">What careers suit science students?</button>
+                                <button class="btn btn-outline-secondary suggested-btn">How to become a software engineer?</button>
+                                <button class="btn btn-outline-secondary suggested-btn">What skills do I need for business?</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-4">
+                    <p>For more personalized guidance, consider our <a href="{{ url_for('career_assessment') }}">detailed career assessment</a> or <a href="{{ url_for('contact') }}">book a session</a> with our human counselors.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const chatForm = document.getElementById('chat-form');
+    const userInput = document.getElementById('user-input');
+    const chatContainer = document.getElementById('chat-container');
+    
+    // Handle form submission
+    chatForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const message = userInput.value.trim();
+        if (message) {
+            addMessage('user', message);
+            userInput.value = '';
+            
+            // Show loading indicator
+            const loadingDiv = document.createElement('div');
+            loadingDiv.className = 'ai-message alert alert-secondary';
+            loadingDiv.innerHTML = '<strong>AI Counselor:</strong> Thinking...';
+            chatContainer.appendChild(loadingDiv);
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+            
+            // Send to server
+            fetch('/ai-counseling', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `user_input=${encodeURIComponent(message)}`
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Remove loading indicator
+                chatContainer.removeChild(loadingDiv);
+                
+                if (data.response) {
+                    addMessage('ai', data.response);
+                } else if (data.error) {
+                    addMessage('ai', `Sorry, there was an error: ${data.error}`);
+                }
+            })
+            .catch(error => {
+                chatContainer.removeChild(loadingDiv);
+                addMessage('ai', 'Sorry, there was an error processing your request.');
+            });
+        }
+    });
+    
+    // Suggested questions
+    document.querySelectorAll('.suggested-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            userInput.value = this.textContent;
+        });
+    });
+    
+    // Add message to chat
+    function addMessage(sender, text) {
+        const messageDiv = document.createElement('div');
+        messageDiv.className = sender === 'user' ? 'user-message alert alert-success' : 'ai-message alert alert-info';
+        messageDiv.innerHTML = `<strong>${sender === 'user' ? 'You:' : 'AI Counselor:'}</strong> ${text}`;
+        chatContainer.appendChild(messageDiv);
+        chatContainer.scrollTop = chatContainer.scrollHeight;
+    }
+});
+</script>
+{% endblock %}
